@@ -58,3 +58,10 @@ def profile():
         return redirect(url_for('login'))
 
     return render_template('profile.html')
+
+
+@app.errorhandler(404)
+def error(e):
+	return `Ok`
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=int(os.environ.get('PORT','5000')),debug=True)
